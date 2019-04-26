@@ -12,7 +12,6 @@ public class OnboardingApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-	how to test springboot controller
 	
 
 }

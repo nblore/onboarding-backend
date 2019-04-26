@@ -39,22 +39,4 @@ public class UserController {
         userService.delete(delID);
         return "redirect:http://localhost:8080/";    
     }
-
-    @RequestMapping(value = "/users/name/{user}", method = RequestMethod.GET)
-    public ResponseEntity<List<User>> findByFirstName(@PathVariable String user) {
-        List<User> users = userService.findByFirstName(user);
-        if (users.isEmpty()) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<List<User>>(users, HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/users/username/{username}", method = RequestMethod.GET)
-    public ResponseEntity<User> findByUsername(@PathVariable String username) {
-        User user = userService.findByUsername(username);
-        if (user == null) {
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<User>(user, HttpStatus.OK);
-    }
 }
